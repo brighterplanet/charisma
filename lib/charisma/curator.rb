@@ -61,6 +61,17 @@ module Charisma
         memo
       end
     end
+
+    # Provide a hash of the computed characteristics' values.
+    #
+    # This is just a convenience method for injecting a hash with values.
+    # @return [Hash]
+    def value_hash
+      characteristics.inject({}) do |memo, (k, v)|
+        memo[k] = v.value
+        memo
+      end
+    end
     
     # Provide a shallow copy.
     #

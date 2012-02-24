@@ -27,4 +27,10 @@ describe Charisma::Curator do
       @curator.characteristics[:size].value.must_be_nil
     end
   end
+
+  describe '#value_hash' do
+    it 'returns a hash of non-curated values' do
+      @curator.value_hash.must_equal :window_count => 3, :weight => false
+    end
+  end
 end
